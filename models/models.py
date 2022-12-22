@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-# class grupo3c(models.Model):
-#     _name = 'grupo3c.grupo3c'
+class grupo3c(models.Model):
+    name = 'grupo3c.grupo3c'
 
 #     name = fields.Char()
 #     value = fields.Integer()
