@@ -5,7 +5,7 @@ from odoo import fields
 from odoo import models
 
 class Place(models.Model):
-    _name = 'grupo3c.Place' 
+    _name = 'grupo3c.place' 
     
     place_id = fields.Char(required=True ,string="place_id")
     name = fields.Char(required=True ,string="name")     
@@ -14,6 +14,6 @@ class Place(models.Model):
     date = fields.Date(required=True ,string="date")
     #tenant = person who rents a place
     Admin_id = fields.Many2one('res.Users',string="tenant")
-    Events_ids = fields.One2Many('grupo3c.event', "grupo3c.Place", string="eventPlaceCode")
+    Events_ids = fields.One2many('grupo3c.event', "place", string="eventPlaceCode")
    
 

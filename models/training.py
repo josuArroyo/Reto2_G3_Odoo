@@ -7,16 +7,16 @@
 from odoo import models, fields, api
 
 class Training(models.Model):
-     _name = 'grupo3c.Training'
+    _name = 'grupo3c.training'
      
-     trainingId = fields.Integer(required=True, string= "trainingId")
-     description = fields.Text(required=True, string= "description")
-     duration = fields.Float(required=True, string= "duration")
-    periodTime = fields.Float(required=True, string= "periodTime")
-    intensity = fields.Integer(required=True, string= "intensity")
-    repeats = fields.Integer(required=True, string= "repeats")
-    objectiveId = fields.Many2One("grupo3c.objective", string= "objectiveId")
-    admin_ids = fields.Many2One ("res.Users", string= "admin_ids")
+    trainingId = fields.Integer( )
+    description = fields.Text()
+    duration = fields.Float()
+    periodTime = fields.Float()
+    intensity = fields.Integer()
+    repeats = fields.Integer()
+    objectiveId = fields.Many2one("grupo3c.objective", string= "Objective Id")
+    admin_ids = fields.Many2one ("res.Users", string= "Admin ids")
 
     
 
