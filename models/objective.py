@@ -11,6 +11,7 @@ class Objective(models.Model):
      paramDesc = fields.Text(String = "Objective´s description", required=True)
      objectiveId = fields.Integer(String="objective_code", required = True)
      
-     training_id = fields.One2many("grupo3c.Objective", "grupo3c.Training", String="Training_code")
+     training_id = fields.One2many("grupo3c.Objective", "training_id", String="Training_code")
      admin = fields.Many2one("res.Users", String="Trainer_identification")
      clients = fields.Many2many("res.Users", "grupo3c.Objective", String="Client_identification")
+     #hola
