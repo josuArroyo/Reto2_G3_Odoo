@@ -12,5 +12,5 @@ class Objective(models.Model):
     objectiveId = fields.Integer(String="objective_code", required = True)
      
     training_id = fields.One2many("grupo3c.training", "objectiveId", String="Training_code")
-    admin = fields.Many2one("res.Users", String="Trainer_identification")
-    clients = fields.Many2many("res.Users", "grupo3c.objective", String="Client_identification")
+    admin = fields.Many2one("res.users", String="Trainer_identification")
+    clients = fields.Many2many("res.users", String="Client_identification")

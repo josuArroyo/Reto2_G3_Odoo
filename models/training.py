@@ -16,7 +16,7 @@ class Training(models.Model):
     intensity = fields.Integer()
     repeats = fields.Integer()
     objectiveId = fields.Many2one("grupo3c.objective", string= "Objective Id")
-    admin_ids = fields.Many2one ("res.Users", string= "Admin ids")
+    admin_ids = fields.Many2one ("res.users", string= "Admin ids", required = True)
 
     
 
