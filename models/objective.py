@@ -7,8 +7,8 @@ class Objective(models.Model):
      
     name = fields.Char(String = "Objective", required=True)
     description = fields.Text(String = "Description", required=True)
-    paramValue = fields.Char(String="Objective´s value", required=True)
-    paramDesc = fields.Text(String = "Objective´s description", required=True)
+    paramValue = fields.Char(String="ObjectiveÂ´s value", required=True)
+    paramDesc = fields.Text(String = "ObjectiveÂ´s description", required=True)
     objectiveId = fields.Integer(String="objective_code", required = True)
      
     training_id = fields.One2many("grupo3c.training", "objectiveId", String="Training_code")

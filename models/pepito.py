@@ -3,8 +3,8 @@
 from odoo import models, fields, api
 
 class pepito (models.Model):
-    _name = 'res.Users'
-    _inherit = 'res.Users'
+    _name = 'res.users'
+    _inherit = 'res.users'
 
     eventId = fields.One2Many ("grupo3c.event", string = "Event id")
     isAdmin = fields.Boolean(string = "Admin", required = True)

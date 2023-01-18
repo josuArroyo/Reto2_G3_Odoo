@@ -1,59 +1,17 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="grupo3c.list">
-      <field name="name">grupo3c list</field>
-      <field name="model">grupo3c.grupo3c</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
-    -->
-
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="grupo3c.action_window">
-      <field name="name">grupo3c window</field>
-      <field name="res_model">grupo3c.grupo3c</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="grupo3c.action_server">
-      <field name="name">grupo3c server</field>
-      <field name="model_id" ref="model_grupo3c_grupo3c"/>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
+ 
 
     <!-- Top menu item -->
-    <!--
-    <menuitem name="grupo3c" id="grupo3c.menu_root"/>
+    
+    <menuitem name="FUERZA_G3"
+              id="grupo3c.menu_root"/>
     -->
     <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="grupo3c.menu_1" parent="grupo3c.menu_root"/>
-    <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="grupo3c.menu_1_list" parent="grupo3c.menu_1"
-              action="grupo3c.action_window"/>
-    <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
-              action="grupo3c.action_server"/>
-    -->
+    
+    <menuitem name="FUERZA_G3_MENU"
+              id="grupo3c.menu_1"
+              parent="grupo3c.menu_root"/>
+    
   </data>
 </odoo>
