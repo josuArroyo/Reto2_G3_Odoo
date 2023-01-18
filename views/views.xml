@@ -16,29 +16,43 @@
     -->
 
     <!-- actions opening views on models -->
-    
-    <record model="ir.actions.act_window" id="grupo3c.action_window_4">
-      <field name="name">FUERZA_G3_OBJECTIVES</field>
-      <field name="res_model">grupo3c.objective</field>
+    <!--
+    <record model="ir.actions.act_window" id="grupo3c.action_window">
+      <field name="name">grupo3c window</field>
+      <field name="res_model">grupo3c.grupo3c</field>
       <field name="view_mode">tree,form</field>
     </record>
-    
+    -->
 
     <!-- server action to the one above -->
     <!--
-    
+    <record model="ir.actions.server" id="grupo3c.action_server">
+      <field name="name">grupo3c server</field>
+      <field name="model_id" ref="model_grupo3c_grupo3c"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
     -->
 
     <!-- Top menu item -->
-    
+    <!--
+    <menuitem name="grupo3c" id="grupo3c.menu_root"/>
+    -->
     <!-- menu categories -->
-    
-    
-  
+    <!--
+    <menuitem name="Menu 1" id="grupo3c.menu_1" parent="grupo3c.menu_root"/>
+    <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
+    -->
     <!-- actions -->
-   
-   <menuitem name="FUERZA_G3_OBJECTIVES" id="grupo3c.menu_4_list" parent="grupo3c.menu_root" action="grupo3c.action_window_4"/>
-    <!--<menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
+    <!--
+    <menuitem name="List" id="grupo3c.menu_1_list" parent="grupo3c.menu_1"
+              action="grupo3c.action_window"/>
+    <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
               action="grupo3c.action_server"/>
     -->
   </data>
