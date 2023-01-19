@@ -1,19 +1,51 @@
 
 <odoo>
   <data>
-<!--     explicit list view definition 
-    
-    <record model="ir.ui.view" id="grupo3c.list">
-      <field name="name">grupo3c list</field>
-      <field name="model">grupo3c.grupo3c</field>
+<!--     explicit list view definition -->
+
+    <record model="ir.ui.view" id="grupo3c.objective_list">
+      <field name="name">grupo3c objective search</field>
+      <field name="model">grupo3c.objective</field>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
+          <search>
+             <field name="name"/>            
+            <field name="paramValue"/>         
+          </search>
       </field>
-    </record>-->
+    </record>
+    
+    <record model="ir.ui.view" id="grupo3c.objective_list">
+      <field name="name">grupo3c objective tree</field>
+      <field name="model">grupo3c.objective</field>
+      <field name="arch" type="xml">
+          <tree>
+             <field name="id"/>
+             <field name="name"/>
+             <field name="description"/>             
+             <field name="paramValue"/>
+             <field name="paramDesc"/>          
+          </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="grupo3c.objective_form">
+      <field name="name">grupo3c objective form</field>
+      <field name="model">grupo3c.objective</field>
+      <field name="arch" type="xml">
+        <form string="objective form">
+            <group colspan="4">
+                <group colspan="2" col="2">
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+                <group colspan="2" col="2">
+                    <field name="paramValue"/>
+                    <field name="paramDesc"/>
+                </group>
+            </group>
+        </form>
+      </field>
+    </record>
     
 
 <!--   actions opening views on models -->
