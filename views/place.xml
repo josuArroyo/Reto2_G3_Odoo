@@ -7,6 +7,7 @@
       <field name="model">grupo3c.place</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id"/>
           <field name="name"/>
           <field name="description"/>
           <field name="placeType"/>
@@ -23,6 +24,7 @@
         <form string="place form">
             <group colspan="4">
                 <group colspan="2" col="2">
+                    <field name="id"/>
                     <field name="name"/>
                     <field name="description"/>
                 </group>
@@ -35,19 +37,19 @@
       </field>
     </record>
     
-      <!--
-    <record model="ir.ui.view" id="grupo3c.place.search">
+      
+    <record model="ir.ui.view" id="grupo3c.place_search">
       <field name="name">grupo3c place search</field>
       <field name="model">grupo3c.place</field>
       <field name="arch" type="xml">
         <search>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="placeType"/>
+          <field name="date"/>
         </search>
       </field>
     </record>
-    -->
+    
 
     <!-- actions opening views on models -->
   
