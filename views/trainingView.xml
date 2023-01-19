@@ -1,0 +1,111 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+   
+    <record model="ir.ui.view" id="grupo3c.training_list">
+      <field name="name">Training list</field>
+      <field name="model">grupo3c.training</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="description"/>
+          <field name="duration"/>
+          <field name="periodTime"/>
+          <field name="intensity"/>
+          <field name="repeats"/>
+        </tree>
+      </field>
+    </record>
+    
+    
+    <!-- explicit form view definition -->
+    
+    <record model="ir.ui.view" id="grupo3c.training_form">
+      <field name="name">Fuerza G3 training form</field>
+      <field name="model">grupo3c.training</field>
+      <field name="arch" type="xml">
+        <form>
+          <group colspan="4">
+              <group colspan="2" col="2">
+                  <separator string="GENERAL TRAINING DATA" colspan="2"/>
+                  <field name="id"/>
+                  <field name="description"/>
+                  <field name="periodTime"/>
+              </group>  
+              <group colspan="2" col="2">
+                  <separator string="TRAINING PARAMETERS" colspan="2"/>
+                  <field name="duration"/>
+                  <field name="intensity"/>
+                  <field name="repeats"/>
+              </group>  
+              <group colspan="2" col="2">
+                  <separator string="ADDITIONAL INFORMATION" colspan="2"/>
+                  <field name="objectiveId"/>
+                  <field name="admin_ids"/>
+              </group> 
+          </group> 
+        </form>
+      </field>
+    </record>
+    
+
+<!-- explicit search view definition -->
+    
+    <record model="ir.ui.view" id="grupo3c.training_search">
+      <field name="name">Fuerza G3 training search</field>
+      <field name="model">grupo3c.training</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="duration"/>
+          <field name="periodTime"/>
+          <field name="intensity"/>
+          <field name="repeats"/>
+        </search>
+      </field>
+    </record>
+    
+    
+    <!-- actions opening views on models -->
+    
+    
+    <record model="ir.actions.act_window" id="grupo3c.action_window">
+      <field name="name">FUERZA_G3 TRAINING</field>
+      <field name="res_model">grupo3c.training</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="grupo3c.action_server">
+      <field name="name">grupo3c server</field>
+      <field name="model_id" ref="model_grupo3c_grupo3c"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="grupo3c" id="grupo3c.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="grupo3c.menu_1" parent="grupo3c.menu_root"/>
+    <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
+    -->
+    <!-- actions -->
+    
+    <menuitem name="Training list" id="grupo3c.menu_1_list" parent="grupo3c.menu_1"
+              action="grupo3c.action_window"/>
+             
+    <!--
+    <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
+              action="grupo3c.action_server"/>
+    -->
+  </data>
+</odoo>
