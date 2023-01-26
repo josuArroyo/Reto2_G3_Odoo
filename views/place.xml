@@ -65,6 +65,22 @@
               action="grupo3c.action_window2"/>
     
 
+    <!-- Add instructor field to existing view -->
+    <record model="ir.ui.view" id="place">
+      <field name="name">res.users</field>
+      <field name="model">res.users</field>
+      <field name="inherit_id" ref="base.view_users_form"/>
+      <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="place">
+                    <group>
+                        <field name="place_ids"/>
+                    </group>
+                </page>
+            </notebook>
+      </field>
+    </record>
+
     <!-- server action to the one above -->
     <!--
     <record model="ir.actions.server" id="grupo3c.action_server">
@@ -95,7 +111,7 @@
               action="grupo3c.action_server"/>
     
     
-    -->
+        -->
    
    
    
@@ -107,5 +123,5 @@
     
     
     
-  </data>
+    </data>
 </odoo>
