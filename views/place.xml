@@ -1,0 +1,111 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+     
+    <record model="ir.ui.view" id="grupo3c.place_list">
+      <field name="name">grupo3c place</field>
+      <field name="model">grupo3c.place</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="name"/>
+          <field name="description"/>
+          <field name="placeType"/>
+          <field name="date"/>
+        </tree>
+      </field>
+    </record>
+   
+     
+    <record model="ir.ui.view" id="grupo3c.place_form">
+      <field name="name">grupo3c place form</field>
+      <field name="model">grupo3c.place</field>
+      <field name="arch" type="xml">
+        <form string="place form">
+            <group colspan="4">
+                <group colspan="2" col="2">
+                    <field name="id"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+                <group colspan="2" col="2">
+                    <field name="placeType"/>
+                    <field name="date"/>
+                </group>
+            </group>
+        </form>
+      </field>
+    </record>
+    
+      
+    <record model="ir.ui.view" id="grupo3c.place_search">
+      <field name="name">grupo3c place search</field>
+      <field name="model">grupo3c.place</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="placeType"/>
+          <field name="date"/>
+        </search>
+      </field>
+    </record>
+    
+
+    <!-- actions opening views on models -->
+  
+    <record model="ir.actions.act_window" id="grupo3c.action_window2">
+      <field name="name">grupo3c places</field>
+      <field name="res_model">grupo3c.place</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="FUERZAG3_PlaceManagment" 
+              id="grupo3c.menu_2_list" 
+              parent="grupo3c.menu_1"
+              action="grupo3c.action_window2"/>
+    
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="grupo3c.action_server">
+      <field name="name">grupo3c server</field>
+      <field name="model_id" ref="model_grupo3c_grupo3c"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="FUERZA_G3" id="grupo3c.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="FUERZA_G3_PLACE" id="grupo3c.menu_1" parent="grupo3c.menu_root"/>
+    <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
+    
+    <menuitem name="List" id="grupo3c.menu_1_list" parent="grupo3c.menu_1"
+              action="grupo3c.action_window"/>
+    <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
+              action="grupo3c.action_server"/>
+    
+    
+        -->
+   
+   
+   
+    
+   
+   
+    
+     
+    
+    
+    
+    </data>
+</odoo>

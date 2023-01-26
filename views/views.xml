@@ -1,12 +1,17 @@
 <odoo>
-  <data>
+  <data> 
     <!-- Top menu item -->
 
     <menuitem name="FUERZA_G3" id="grupo3c.menu_root"/>
-
-    <!-- menu categories -->
     
-    <menuitem name="FUERZA_G3_EVENT" id="grupo3c.menu_3" parent="grupo3c.menu_root"/>
+
+    
+    <!-- menu categories -->
+        <menuitem name="FUERZA_G3_MENU"
+              id="grupo3c.menu_1"
+              parent="grupo3c.menu_root"/>
+  </data>
+</odoo>
     <!--
     <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
     -->
@@ -17,5 +22,3 @@
     <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
               action="grupo3c.action_server"/>
     -->
-  </data>
-</odoo>

@@ -14,5 +14,3 @@ class Place(models.Model):
     #tenant = person who rents a place
     admin_id = fields.Many2one('res.users',string="tenant")
     event_ids = fields.One2many('grupo3c.event', "place_id", string="eventPlaceCode")
-   
-

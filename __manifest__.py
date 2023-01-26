@@ -18,16 +18,17 @@
     # for the full list
     'category': 'Uncategorized',
     'version': '0.1',
-
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','report'],
 
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
         'views/event.xml',
+        'views/place.xml',
         'views/templates.xml',
+        'views/ir.events.report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
