@@ -24,11 +24,13 @@
         <form string="place form">
             <group colspan="4">
                 <group colspan="2" col="2">
+                    <separator string="NOMBRE" colspan="2"/>
                     <field name="id"/>
                     <field name="name"/>
                     <field name="description"/>
                 </group>
                 <group colspan="2" col="2">
+                    <separator string="CARACTERISTICAS" colspan="2"/>
                     <field name="placeType"/>
                     <field name="date"/>
                 </group>
