@@ -3,13 +3,13 @@
   <data>
 <!--     explicit list view definition -->
 
-    <record model="ir.ui.view" id="grupo3c.objective_list">
+    <record model="ir.ui.view" id="grupo3c.objective_search">
       <field name="name">grupo3c objective search</field>
       <field name="model">grupo3c.objective</field>
       <field name="arch" type="xml">
           <search>
              <field name="name"/>            
-            <field name="paramValue"/>         
+             <field name="paramValue"/>         
           </search>
       </field>
     </record>
@@ -35,10 +35,12 @@
         <form string="objective form">
             <group colspan="4">
                 <group colspan="2" col="2">
+                    <separator string="GENERAL OBJECTIVE DATA" colspan="2"/>
                     <field name="name"/>
                     <field name="description"/>
                 </group>
                 <group colspan="2" col="2">
+                    <separator string="OBJECTIVE VALUES" colspan="2"/>
                     <field name="paramValue"/>
                     <field name="paramDesc"/>
                 </group>
@@ -46,6 +48,8 @@
         </form>
       </field>
     </record>
+    
+    
     
 
 <!--   actions opening views on models -->
