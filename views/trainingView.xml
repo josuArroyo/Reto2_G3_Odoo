@@ -65,8 +65,25 @@
     </record>
     
     
-    <!-- actions opening views on models -->
     
+    <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="partner_instructor_form_TrainingView">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Trainings">
+                        <group>
+                            <field name="training_ids"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+    
+    <!-- actions opening views on models -->
     
     <record model="ir.actions.act_window" id="grupo3c.action_window">
       <field name="name">FUERZA_G3 TRAINING</field>
