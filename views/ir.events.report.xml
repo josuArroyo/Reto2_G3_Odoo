@@ -1,0 +1,28 @@
+<odoo>
+    <report
+        id="event_report"
+        model="grupo3c.event"
+        string="Events Report"
+        name="grupo3c.event_list"
+        file="event.report"
+        report_type="qweb-pdf"/>
+
+    <template id="grupo3c.event_list">
+        <t t-call="report.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="report.external_layout">
+                    <div class="page">
+                        <h2 t-field="doc.id"/>
+                        <p> 
+                            Event id: <span t-field="doc.id"/>
+                            Event date: <span t-field="doc.date"/>
+                            Event description: <span t-field="doc.description"/>
+                            Event type: <span t-field="doc.eventType"/>
+                            Event number of participants: <span t-field="doc.numPart"/>
+                        </p>
+                    </div>
+                </t>
+            </t>    
+        </t>
+    </template>
+</odoo>
