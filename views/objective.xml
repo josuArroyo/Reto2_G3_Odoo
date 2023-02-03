@@ -1,0 +1,115 @@
+
+<odoo>
+  <data>
+<!--     explicit list view definition -->
+
+    <record model="ir.ui.view" id="grupo3c.objective_search">
+      <field name="name">grupo3c objective search</field>
+      <field name="model">grupo3c.objective</field>
+      <field name="arch" type="xml">
+          <search>
+             <field name="name"/>            
+             <field name="paramValue"/>         
+          </search>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="grupo3c.objective_list">
+      <field name="name">grupo3c objective tree</field>
+      <field name="model">grupo3c.objective</field>
+      <field name="arch" type="xml">
+          <tree>
+             <field name="id"/>
+             <field name="name"/>
+             <field name="description"/>             
+             <field name="paramValue"/>
+             <field name="paramDesc"/>          
+          </tree>
+      </field>
+    </record>
+    
+    <record model="ir.ui.view" id="grupo3c.objective_form">
+      <field name="name">grupo3c objective form</field>
+      <field name="model">grupo3c.objective</field>
+      <field name="arch" type="xml">
+        <form string="objective form">
+            <group colspan="4">
+                <group colspan="2" col="2">
+                    <separator string="GENERAL OBJECTIVE DATA" colspan="2"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </group>
+                <group colspan="2" col="2">
+                    <separator string="OBJECTIVE VALUES" colspan="2"/>
+                    <field name="paramValue"/>
+                    <field name="paramDesc"/>
+                </group>
+            </group>
+        </form>
+      </field>
+    </record>
+    
+    
+     <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="partner_instructor_form_objectiveView">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Objectives">
+                        <group>
+                            <field name="objective_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    
+
+<!--   actions opening views on models -->
+    
+    <record model="ir.actions.act_window" id="grupo3c.action_window4">
+      <field name="name">FUERZA_G3 OBJECTIVE</field>
+      <field name="res_model">grupo3c.objective</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="ObjectiveManagement" 
+              id="grupo3c.menu_4_list" 
+              parent="grupo3c.menu_1"
+              action="grupo3c.action_window4"/>
+    
+
+<!--     server action to the one above 
+    
+    <record model="ir.actions.server" id="grupo3c.action_server">
+      <field name="name">grupo3c server</field>
+      <field name="model_id" ref="model_grupo3c_grupo3c"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    
+     Top menu item 
+    
+    <menuitem name="grupo3c" id="grupo3c.menu_root"/>
+    
+     menu categories 
+    
+    <menuitem name="Menu 1" id="grupo3c.menu_1" parent="grupo3c.menu_root"/>
+    <menuitem name="Menu 2" id="grupo3c.menu_2" parent="grupo3c.menu_root"/>
+    
+     actions 
+    
+    <menuitem name="List" id="grupo3c.menu_1_list" parent="grupo3c.menu_1"
+              action="grupo3c.action_window"/>
+    <menuitem name="Server to list" id="grupo3c" parent="grupo3c.menu_2"
+              action="grupo3c.action_server"/>-->
+    
+  </data>
+</odoo>
