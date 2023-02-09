@@ -1,0 +1,74 @@
+
+<odoo>
+  <data>
+    <record model="ir.ui.view" id="grupo3c.event_list">
+      <field name="name">grupo3c event</field>
+      <field name="model">grupo3c.event</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="id"/>
+          <field name="date"/>
+          <field name="description"/>
+          <field name="eventType"/>
+          <field name="numPart"/>
+        </tree>
+      </field>
+    </record>
+        
+    <record model="ir.ui.view" id="grupo3c.event_form">
+      <field name="name">grupo3c event form</field>
+      <field name="model">grupo3c.event</field>
+      <field name="arch" type="xml">
+        <form string="event form">
+          <group colspan="4">
+            <group colspan="2" col="2">
+              <field name="id"/>
+              <field name="description"/>
+              <field name="eventType"/>
+            </group>
+            <group colspan="2" col="2">
+              <field name="date"/>
+              <field name="numPart"/>
+              <field name="place_id"/>
+            </group>    
+          </group>
+        </form>
+      </field>
+    </record> 
+        
+    <record model="ir.ui.view" id="grupo3c.event_search">
+      <field name="name">grupo3c event search</field>
+      <field name="model">grupo3c.event</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="id"/>
+          <field name="eventType"/>
+        </search>
+      </field>
+    </record>
+    
+    <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="partner_instructor_form_eventView">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Events">
+                        <group>
+                            <field name="event_ids"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+        
+    <record model="ir.actions.act_window" id="grupo3c.action_window3">
+      <field name="name">FUERZA_G3 EVENT</field>
+      <field name="res_model">grupo3c.event</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+        
+    <menuitem name="EventManagement" id="grupo3c.menu_3_list" parent="grupo3c.menu_4" action="grupo3c.action_window3"/>
+  </data>
+</odoo>

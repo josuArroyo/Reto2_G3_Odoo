@@ -50,17 +50,32 @@
     </record>
     
     
+     <!-- Add instructor field to existing view -->
+        <record model="ir.ui.view" id="partner_instructor_form_objectiveView">
+            <field name="name">res.users</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Objectives">
+                        <group>
+                            <field name="objective_id"/>
+                        </group>
+                    </page>
+                </notebook>
+            </field>
+        </record>
     
 
 <!--   actions opening views on models -->
     
     <record model="ir.actions.act_window" id="grupo3c.action_window4">
-      <field name="name">grupo3c objective</field>
+      <field name="name">FUERZA_G3 OBJECTIVE</field>
       <field name="res_model">grupo3c.objective</field>
       <field name="view_mode">tree,form</field>
     </record>
     
-    <menuitem name="FUERZAG3_ObjectiveManager" 
+    <menuitem name="ObjectiveManagement" 
               id="grupo3c.menu_4_list" 
               parent="grupo3c.menu_4"
               action="grupo3c.action_window4"/>
@@ -80,7 +95,6 @@
       </field>
     </record>
     
-
      Top menu item 
     
     <menuitem name="grupo3c" id="grupo3c.menu_root"/>

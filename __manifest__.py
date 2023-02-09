@@ -26,8 +26,14 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/views.xml',
+        'views/training.xml',
+        'views/place.xml',
         'views/objective.xml',
+        'views/event.xml',
         'views/templates.xml',
+        
+        
+        
     ],
     # only loaded in demonstration mode
     'demo': [
