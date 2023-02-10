@@ -8,9 +8,11 @@
       <field name="arch" type="xml">
         <tree>
           <field name="id"/>
+          <field name="name"/>
           <field name="description"/>
           <field name="duration"/>
-          <field name="periodTime"/>
+          <field name="periodStart"/>
+          <field name="periodEnd"/>
           <field name="intensity"/>
           <field name="repeats"/>
         </tree>
@@ -29,8 +31,10 @@
               <group colspan="2" col="2">
                   <separator string="GENERAL TRAINING DATA" colspan="2"/>
                   <field name="id"/>
+                  <field name="name"/>
                   <field name="description"/>
-                  <field name="periodTime"/>
+                  <field name="periodStart"/>
+                  <field name="periodEnd"/>
               </group>  
               <group colspan="2" col="2">
                   <separator string="TRAINING PARAMETERS" colspan="2"/>
@@ -57,7 +61,7 @@
       <field name="arch" type="xml">
         <search>
           <field name="duration"/>
-          <field name="periodTime"/>
+          <field name="periodStart"/>
           <field name="intensity"/>
           <field name="repeats"/>
         </search>

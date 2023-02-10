@@ -13,12 +13,13 @@ class Training(models.Model):
      #cargar sin one2many y revisar que el modelo este bien.
      #commit del codigo y partir todos del mismo codigo.
      #probamos one2many cada uno en su entidad uno a uno.
-     
-    description = fields.Text()
-    duration = fields.Float()
-    periodTime = fields.Date()
-    intensity = fields.Integer()
-    repeats = fields.Integer()
+    name = fields.Text(string= "Name of training", required = True) 
+    description = fields.Text(string= "Description of training", required = True)
+    duration = fields.Float(string= "Duration of training", required = True)
+    periodStart = fields.Date(string= "Start date of training", required = True)
+    periodEnd = fields.Date(string= "End date of training", required = True)
+    intensity = fields.Integer(string= "Intensity of training", required = True)
+    repeats = fields.Integer(string= "Repeats of training", required = True)
     objectiveId = fields.Many2one("grupo3c.objective", string= "Objective Id")
     admin_ids = fields.Many2one ("res.users", string= "Admin ids")
 
@@ -43,12 +44,29 @@ class Training(models.Model):
     
     
     #La duracion no puede ser anterior a la actual
-    @api.constrains('periodTime')
-    def _check_periodTime(self):
+#    @api.constrains('periodTime')
+#    def _check_periodTime(self):
+#        for training in self:
+#             if fields.Date.from_string(training.periodTime) < fields.Date.from_string(fields.Date.today()):
+#                raise exceptions.ValidationError("El tiempo de periodo no puede ser anterior a la fecha actual.")
+
+    #Validar que periodEnd es mayor que periodStart.
+    @api.onchange('periodEnd')
+    def _onchange_periodEnd(self):
+        if self.periodEnd < self.periodStart:
+            return {
+        'warning': {
+            'title': "Something bad happened",
+            'message': "Period end must be greater than period start "
+        }     
+    }
+            
+    @api.constrains('periodEnd', 'periodStart')
+    def _check_periodEnd_greater_periodStart(self):
         for training in self:
-             if fields.Date.from_string(training.periodTime) < fields.Date.from_string(fields.Date.today()):
-                raise exceptions.ValidationError("El tiempo de periodo no puede ser anterior a la fecha actual.")
-   
+            if self.periodEnd < self.periodStart:
+                raise exceptions.ValidationError("Period end must be greater than period start.")
+  
    
     #La duracion no puede ser numero negativo
     @api.onchange ('duration')
